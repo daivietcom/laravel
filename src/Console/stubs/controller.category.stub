@@ -1,0 +1,34 @@
+<?php namespace DummyNamespace\Controllers;
+
+use Illuminate\Http\Request;
+use DummyNamespace\DummyModelRepositoryInterface as DummyModelRepository;
+
+class DummyController extends \Http\Controllers\FrontEndController
+{
+    protected $DummyRepos;
+
+    public function __construct(DummyModelRepository $DummyRepos)
+    {
+        parent::__construct();
+        $this->DummyRepos = $DummyRepos;
+    }
+
+    public function displayCategory($category) {
+        $data = [
+            'category' => $category,
+            'list' => $this->DummyRepos->pagination($category->id),
+            'breadcrumb' => breadcrumb($category->name)
+        ];
+
+        return view('DummyNamespace::list', $data);
+    }
+
+    public function displayPost($post) {
+        $data = [
+            'post' => $post,
+            'breadcrumb' => breadcrumb($post->name)
+        ];
+
+        return view('DummyNamespace::detail', $data);
+    }
+}

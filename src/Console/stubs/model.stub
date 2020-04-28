@@ -1,0 +1,7 @@
+<?php namespace DummyNamespace;
+
+class DummyModel extends \Illuminate\Database\Eloquent\Model
+{
+    protected $table = 'DummyRepo';
+    protected $fillable = ['name'];
+}

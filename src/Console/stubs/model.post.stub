@@ -1,0 +1,7 @@
+<?php namespace DummyNamespace;
+
+class DummyModel extends \Models\Post {
+
+    protected $fillable = ['name', 'slug', 'title', 'image', 'excerpt', 'parent', 'content', 'status', 'comment'];
+
+}

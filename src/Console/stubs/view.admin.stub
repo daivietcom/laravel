@@ -1,0 +1,29 @@
+@push('head')
+<script type="text/ng-template" id="DummyRepo.html">
+    <div ng-controller="DummyModelCtrl">
+        <div class="container-fluid">
+            <h1>DummyDisplayName 1.0.0</h1>
+            <p>DummyDescription</p>
+        </div>
+        <div class="content-btn">
+            <button class="btn btn-default" ng-click="demo()"><i class="fa fa-smile-o fa-fw"></i> {{ __('Demo button') }}</button>
+        </div>
+    </div>
+</script>
+<script type="text/javascript">
+    VnSapp.controller('DummyModelCtrl', function ($rootScope, $scope, Notification) {
+        $rootScope.siteTitle = '{{__('DummyDisplayName')}}';
+        $scope.demo = function () {
+            Notification.success('{{ __('Demo button clicked') }}')
+        }
+    });
+</script>
+@endpush
+@navbarcpanel([
+    'icon' => 'fa fa-smile-o fa-fw',
+    'label' => 'DummyDisplayName',
+    'permission' => 'DummyRepo',
+    'name' => 'root.DummyRepo',
+    'url' => 'DummyRepo',
+    'template' => 'DummyRepo.html'
+])

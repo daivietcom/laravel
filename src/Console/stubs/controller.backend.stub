@@ -1,0 +1,12 @@
+<?php namespace DummyNamespace\Controllers\Backend;
+
+use Illuminate\Http\Request;
+
+class DummyController extends \App\Http\Controllers\Controller
+{
+
+    public function index(Request $request)
+    {
+        return response()->json($request->all());
+    }
+}

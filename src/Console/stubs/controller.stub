@@ -1,0 +1,8 @@
+<?php namespace DummyNamespace\Controllers;
+
+class DummyController extends \Http\Controllers\FrontEndController
+{
+    public function index() {
+        return view('DummyNamespace::index');
+    }
+}

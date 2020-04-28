@@ -1,0 +1,11 @@
+<?php namespace DummyNamespace;
+
+class DummyCategoryModel extends \Models\Term {
+
+    protected $fillable = ['name', 'slug', 'title', 'content', 'order', 'parent', 'status'];
+
+    public function childrens()
+    {
+        return $this->hasMany('DummyNamespace\DummyCategoryModel', 'parent');
+    }
+}

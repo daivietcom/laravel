@@ -1,0 +1,55 @@
+<?php namespace DummyNamespace\Controllers\Backend;
+
+use Illuminate\Http\Request;
+use DummyNamespace\CategoryRequest;
+use DummyNamespace\CategoryRepositoryInterface as CategoryRepository;
+
+class DummyCategoryController extends \App\Http\Controllers\Controller
+{
+    protected $categories;
+
+    public function __construct(CategoryRepository $categories)
+    {
+        $this->categories = $categories;
+    }
+
+    public function index(Request $request)
+    {
+        list($categories, $total) = $this->categories->filter($request->only('filter','sorting'));
+        return response()->json($categories)->header('total', $total);
+    }
+
+    public function show($id)
+    {
+        $category = $this->categories->find($id);
+        return response()->json(array_merge($category->toArray(),['title'=>$category->title,'content'=>$category->content]));
+    }
+
+    public function store(CategoryRequest $request)
+    {
+        $input = $request->all();
+        $input['order'] = $this->categories->getCount($input['parent']) + 1;
+        $category = $this->categories->create($input);
+        return response()->json($category);
+    }
+
+    public function update(CategoryRequest $request, $id)
+    {
+        $category = $this->categories->update($id, $request->all());
+        return response()->json($category);
+    }
+
+    public function destroy($id)
+    {
+        $category = $this->categories->delete($id);
+        return response()->json($category);
+    }
+
+    public function sortCategory(Request $request) {
+        $categories = $request->input('data');
+        foreach ($categories as $key => $id) {
+            $this->categories->update($id, ['order'=>$key+1]);
+        }
+        return response()->json(['success' => true]);
+    }
+}

@@ -1,0 +1,45 @@
+<?php namespace DummyNamespace\Controllers\Backend;
+
+use Illuminate\Http\Request;
+use DummyNamespace\DummyModelRequest;
+use DummyNamespace\DummyModelRepositoryInterface as DummyModelRepository;
+
+class DummyController extends \App\Http\Controllers\Controller
+{
+    protected $DummyRepos;
+
+    public function __construct(DummyModelRepository $DummyRepos)
+    {
+        $this->DummyRepos = $DummyRepos;
+    }
+
+    public function index()
+    {
+        list($DummyRepos, $total) = $this->DummyRepos->filter($request->all());
+        return response()->json($DummyRepos)->header('total', $total);
+    }
+
+    public function show($id)
+    {
+        $DummyRepo = $this->DummyRepos->find($id);
+        return response()->json($DummyRepo);
+    }
+
+    public function store(DummyModelRequest $request)
+    {
+        $DummyRepo = $this->DummyRepos->create($request->all());
+        return response()->json($DummyRepo);
+    }
+
+    public function update(DummyModelRequest $request, $id)
+    {
+        $DummyRepo = $this->DummyRepos->update($id, $request->all());
+        return response()->json($DummyRepo);
+    }
+
+    public function destroy($id)
+    {
+        $DummyRepo = $this->DummyRepos->delete($id);
+        return response()->json($DummyRepo);
+    }
+}

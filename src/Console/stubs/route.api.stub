@@ -1,0 +1,5 @@
+<?php
+
+Route::group(['prefix' => 'v1', 'middleware' => 'permission:DummyRepo'], function () {
+    Route::resource('DummyRepo', 'Backend\DummyController', ['only' => ['index', 'show', 'store', 'update', 'destroy']]);
+});

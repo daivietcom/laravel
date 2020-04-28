@@ -1,0 +1,11 @@
+<?php namespace DummyNamespace;
+
+use Repositories\Post\PostRepository;
+
+class DummyModelRepository extends PostRepository implements DummyModelRepositoryInterface
+{
+    public function getModel()
+    {
+        return DummyModel::class;
+    }
+}

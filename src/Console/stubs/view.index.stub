@@ -1,0 +1,15 @@
+@extends('Frontend::layouts.full')
+@section('title', 'DummyDisplayName')
+@section('description', 'DummyDescription')
+@section('content')
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">DummyDisplayName 1.0.0</h1>
+                <div class="html-content">
+                    DummyDescription
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection

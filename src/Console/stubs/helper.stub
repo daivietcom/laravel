@@ -1,0 +1,8 @@
+<?php
+
+if (!function_exists('func_DummyRepo')) {
+    function func_DummyRepo()
+    {
+        return 'DummyDisplayName';
+    }
+}

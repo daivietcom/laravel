@@ -1,0 +1,29 @@
+<?php namespace DummyNamespace;
+
+use Illuminate\Support\ServiceProvider;
+use VnSource\Traits\ModuleServiceProviderTrait;
+
+class ModuleServiceProvider extends ServiceProvider
+{
+    use ModuleServiceProviderTrait;
+
+    /**
+     * Bootstrap the application services.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+        $this->initializationModule();
+    }
+
+    /**
+     * Register the application services.
+     *
+     * @return void
+     */
+    public function register()
+    {
+
+    }
+}

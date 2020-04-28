@@ -1,0 +1,11 @@
+<?php namespace DummyNamespace;
+
+use Repositories\EloquentRepository;
+
+class DummyModelRepository extends EloquentRepository implements DummyModelRepositoryInterface
+{
+    public function getModel()
+    {
+        return DummyModel::class;
+    }
+}

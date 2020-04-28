@@ -1,0 +1,13 @@
+<?php namespace DummyNamespace\Controllers;
+
+class DummyController extends \Http\Controllers\FrontEndController
+{
+    public function displayPost($post) {
+        $data = [
+            'post' => $post,
+            'breadcrumb' => breadcrumb($post->name)
+        ];
+
+        return view('DummyNamespace::detail', $data);
+    }
+}

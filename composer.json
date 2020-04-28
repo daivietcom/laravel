@@ -1,0 +1,39 @@
+{
+    "name": "daivietcom/laravel",
+    "description": "Modules package for the Laravel 5 framework.",
+    "keywords": ["framework", "daivietcom", "laravel"],
+    "homepage": "https://github.com/daivietcom/laravel",
+    "license": "MIT",
+    "version": "1.0.0",
+    "authors": [
+        {
+            "name": "Mr. VnS",
+            "email": "peakofmusic@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.6.4",
+        "laravel/framework": ">=5.4.0",
+        "laravel/socialite": ">=2.0.0",
+        "league/flysystem-aws-s3-v3": ">=1.0.0",
+        "league/flysystem-rackspace": ">=1.0.0",
+        "chumper/zipper": ">=1.0.0",
+        "intervention/image": ">=2.3.0",
+        "facebook/graph-sdk": ">=5.3.0",
+        "jenssegers/agent": ">=2.5.0",
+        "webpatser/laravel-uuid": ">=2.0.0"
+    },
+    "autoload": {
+        "files": [
+            "src/constants.php",
+            "src/helpers.php"
+        ],
+        "psr-4": {
+            "VnSource\\": "src/",
+            "Models\\": "src/Models/",
+            "Repositories\\": "src/Repositories/",
+            "Http\\": "src/Http/"
+        }
+    },
+    "minimum-stability": "stable"
+}

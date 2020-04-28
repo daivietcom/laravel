@@ -1,0 +1,11 @@
+<?php
+
+Route::group(['prefix' => 'v1'], function () {
+    Route::group(['middleware' => 'permission:DummyRepo_cat'], function () {
+        Route::post('DummyRepo/category/sort', 'Backend\DummyCategoryController@sortCategory');
+        Route::resource('DummyRepo/category', 'Backend\DummyCategoryController', ['only' => ['index', 'show', 'store', 'update', 'destroy']]);
+    });
+    Route::group(['middleware' => 'permission:DummyRepo'], function () {
+        Route::resource('DummyRepo', 'Backend\DummyController', ['only' => ['index', 'show', 'store', 'update', 'destroy']]);
+    });
+});

@@ -1,0 +1,11 @@
+<?php namespace DummyNamespace;
+
+use Repositories\Term\TermRepository;
+
+class CategoryRepository extends TermRepository implements CategoryRepositoryInterface
+{
+    public function getModel()
+    {
+        return DummyCategoryModel::class;
+    }
+}

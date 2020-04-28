@@ -1,0 +1,20 @@
+@extends('Frontend::layouts.full')
+@section('title', $post->title)
+@section('description', str_limit($post->excerpt,150))
+@section('content')
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <h1 class="page-header">{{ $post->name }}</h1>
+                <blockquote class="text-justify">{{ $post->excerpt }}</blockquote>
+                <div class="html-content">{!! $post->content !!}</div>
+                @if($post->comment)
+                    @gadget('comment', $post->id)
+                @endif
+            </div>
+            <div class="col-md-4">
+                @gadgets('right')
+            </div>
+        </div>
+    </div>
+@endsection
