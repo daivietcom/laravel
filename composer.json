@@ -1,8 +1,8 @@
 {
-    "name": "vnsource/laravel",
+    "name": "daivietcom/laravel",
     "description": "Modules package for the Laravel 5 framework.",
-    "keywords": ["framework", "vnsource", "laravel"],
-    "homepage": "https://github.com/vnsource/laravel",
+    "keywords": ["framework", "daivietcom", "laravel"],
+    "homepage": "https://github.com/daivietcom/laravel",
     "license": "MIT",
     "version": "1.0.0",
     "authors": [
