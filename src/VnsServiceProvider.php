@@ -96,14 +96,14 @@ class VnsServiceProvider extends ServiceProvider
             \Repositories\Group\GroupRepositoryInterface::class,
             \Repositories\Group\GroupRepository::class
         );
-//        $this->app->singleton(
-//            \Repositories\Post\PostRepositoryInterface::class,
-//            \Repositories\Post\PostRepository::class
-//        );
-//        $this->app->singleton(
-//            \Repositories\Term\TermRepositoryInterface::class,
-//            \Repositories\Term\TermRepository::class
-//        );
+        $this->app->singleton(
+            \Repositories\Post\PostRepositoryInterface::class,
+            \Repositories\Post\PostRepository::class
+        );
+        $this->app->singleton(
+            \Repositories\Term\TermRepositoryInterface::class,
+            \Repositories\Term\TermRepository::class
+        );
 
         $this->registerModule();
 

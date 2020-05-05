@@ -1,0 +1,56 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css");
+
+body {
+    padding-top: 70px;
+}
+
+.avatar {
+    display: inline-block;
+    width: 128px;
+    height: 128px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    padding: 3px;
+}
+
+.avatar span {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: block;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    border-radius: 50%;
+}
+
+.loading {
+    position: fixed;
+    z-index: 99999;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,.8);
+}
+
+.loading div {
+    position: absolute;
+    top: calc(50% - 40px);
+    left: 0;
+    right: 0;
+    text-align: center;
+    color: #fff;
+}
+
+.loading span {
+    display: block;
+}
+
+.col-lg-6+span.help-block {
+    padding: 0 15px;
+    text-align: right;
+}

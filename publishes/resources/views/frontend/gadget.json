@@ -1,0 +1,17 @@
+{
+    "menu": [
+        {
+            "name": "menu",
+            "visible": true,
+            "parameters": {
+                "slug": "topmenu"
+            }
+        }
+    ],
+    "home.top": [
+        {
+            "name": "slide",
+            "visible": false
+        }
+    ]
+}

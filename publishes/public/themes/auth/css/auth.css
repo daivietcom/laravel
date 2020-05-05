@@ -1,0 +1,132 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css");
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600');
+
+* {
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+body > div:first-child {
+  max-width: 330px;
+  padding: 15px;
+  margin: 50px auto 0;
+}
+.box-auth .form-group {
+  position: relative;
+}
+.box-auth .form-group .form-control {
+  padding-left: 30px;
+}
+.box-auth .form-group .fa {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  color: rgba(76, 86, 103, 0.4);
+}
+.box-auth .form-group:not(.has-error) .form-control:focus+.fa {
+  color: #66afe9;
+}
+
+.box-auth .form-group.has-error .fa {
+  color: #a94442;
+}
+
+.box-auth .checkbox {
+  margin-top: 6px;
+}
+.text-center+.box-auth-link {
+  margin-top: 20px;
+}
+.box-auth-link {
+  font-size: 13px;
+}
+
+.box-auth-social {
+  text-align: center;
+}
+.box-auth-social h3 {
+  text-transform: uppercase;
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 20px;
+  font-weight: 600;
+  position: relative;
+}
+.box-auth-social h3 span {
+  font-weight: 300;
+  font-size: 14px;
+  display: inline-block;
+  background-color: #fff;
+  padding: 0 5px;
+}
+.box-auth-social h3 span::before,
+.box-title h2::before {
+  content: "";
+  background-color: #ddd;
+  height: 1px;
+  position: absolute;
+  bottom: 9px;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}
+.box-title {
+  position: relative;
+  text-align: center;
+}
+.box-title h2 {
+  display: inline-block;
+  padding: 0 10px;
+  background-color: #fff;
+  text-transform: uppercase;
+  font-size: 18px;
+  color: #666;
+  font-weight: 600;
+}
+.box-title h2::before {
+  bottom: 20px;
+}
+.box-auth .checkbox {
+  display: inline-block;
+}
+.box-auth .checkbox::after {
+  content: "";
+  display: block;
+  clear: both;
+  margin-bottom: 10px;
+}
+
+.box-auth-message {
+  display: none;
+}
+
+.loading {
+  position: fixed;
+  z-index: 99999;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,.8);
+}
+
+.loading div {
+  position: absolute;
+  top: calc(50% - 40px);
+  left: 0;
+  right: 0;
+  text-align: center;
+  color: #fff;
+}
+
+.loading span {
+  display: block;
+}
+
+@media (max-width:480px) {
+  body > div:first-child {
+    margin-top: 15px;
+  }
+}
